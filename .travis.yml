@@ -4,10 +4,10 @@ services:
   - docker
 
 before_script:
-  - docker run -d --name cmssw -v $(pwd):/travis cmssw/cmssw:CMSSW_9_3_2 tail -f /dev/null
-  - docker ps
-  - docker exec -t cmssw bash -c 'cd ~ && source /opt/cms/cmsset_default.sh &&  scram project CMSSW CMSSW_9_3_2'
-  - docker exec -t cmssw bash -c 'mkdir ~/CMSSW_9_3_2/src/nano && ln -s /travis ~/CMSSW_9_3_2/src/nano/testrepo'
+  - # docker run -d --name cmssw -v $(pwd):/travis cmssw/cmssw:CMSSW_9_3_2 tail -f /dev/null
+  - # docker ps
+  - # docker exec -t cmssw bash -c 'cd ~ && source /opt/cms/cmsset_default.sh &&  scram project CMSSW CMSSW_9_3_2'
+  - # docker exec -t cmssw bash -c 'mkdir ~/CMSSW_9_3_2/src/nano && ln -s /travis ~/CMSSW_9_3_2/src/nano/testrepo'
   
 script:
-  - docker exec -it cmssw bash -c 'cd ~/CMSSW_9_3_2/src && source /opt/cms/cmsset_default.sh; eval `scram runtime -sh` && scram build'
+  - # docker exec -it cmssw bash -c 'cd ~/CMSSW_9_3_2/src && source /opt/cms/cmsset_default.sh; eval `scram runtime -sh` && scram build'
