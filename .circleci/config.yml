@@ -11,3 +11,9 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
+      - run:
+          name: CMSSW
+          command: source /opt/cms/cmsset_default.sh
+      - run:
+          name: scram
+          command: cd ~ && scram project CMSSW CMSSW_9_4_6
